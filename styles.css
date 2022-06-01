@@ -67,7 +67,7 @@ main {
 .calculator {
   display: flex;
   flex-direction: column;
-  width: 34rem;
+  width: 30rem;
 }
 /*Calculator header*/
 .calc__header {
@@ -172,3 +172,21 @@ button:hover {
   grid-column-end: 5;
 }
 /*end of Calculator keypad*/
+
+@media screen and (min-width: 22.5em) {
+  .calculator {
+    width: 34rem;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  html {
+    font-size: 75%;
+  }
+  .calculator {
+    width: 46rem;
+  }
+  .calc__keypad {
+    gap: 2.5rem;
+  }
+}
