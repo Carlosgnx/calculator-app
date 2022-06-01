@@ -126,7 +126,6 @@ function reset() {
 }
 function equals() {
     if (previousNumberElem.textContent != '' && actualNumberElem.textContent != '') {
-        console.log(operationName)
         switch (operationName) {
             case 'add':
                 actualNumberElem.innerText = parseFloat(previousNumberElem.textContent) + parseFloat(actualNumberElem.textContent)
@@ -153,8 +152,10 @@ function equals() {
     }
 }
 function operation(name) {
-    if (opeartorElem.textContent == '') {
+    if (opeartorElem.textContent == '' && actualNumberElem.textContent != '') {
         previousNumberElem.innerText = actualNumberElem.textContent
+    } else if (previousNumberElem.textContent == '' && actualNumberElem.textContent == '') {
+        return
     } else {
         switch (operationName) {
             case 'add':
@@ -185,3 +186,4 @@ function operation(name) {
     }
     actualNumberElem.innerText = ''
 }
+//TODO hacer que el operador solo se ponga si hay un numero previo
